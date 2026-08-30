@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImcActivity"
+    android:padding="25dp"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/Titulo"
+        style="@style/TituloPantalla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de IMC"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/peso"
+        style="@style/InputEstandar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Peso (kg)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/altura"
+        style="@style/InputEstandar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Altura (m) — ej: 1.75"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/peso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        style="@style/BotonPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/altura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        style="@style/CardResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iconoImc"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_imc"
+                app:tint="@color/white"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/resultadoImc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/categoriaImc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese sus datos"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:alpha="0.85"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

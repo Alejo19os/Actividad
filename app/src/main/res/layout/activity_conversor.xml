@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConversorActivity"
+    android:padding="25dp"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/Titulo"
+        style="@style/TituloPantalla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Conversor de Unidades"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/textSecondary"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:theme="@style/SpinnerLightTheme"
+        android:textColor="@color/textSecondary"
+        android:textColorHint="@color/textSecondary"
+        android:padding="12dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelCantidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cantidad a convertir"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/textSecondary"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/valorEntrada"
+        style="@style/InputEstandar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ej: 10"
+        android:inputType="numberDecimal"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelCantidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelConversion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Convertir de → a"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/textSecondary"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/valorEntrada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelOrigen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Desde"
+        android:textSize="11sp"
+        android:textColor="@color/textSecondary"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelConversion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flecha" />
+
+    <TextView
+        android:id="@+id/labelDestino"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hasta"
+        android:textSize="11sp"
+        android:textColor="@color/textSecondary"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelConversion"
+        app:layout_constraintStart_toEndOf="@+id/flecha"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerOrigen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:theme="@style/SpinnerLightTheme"
+        android:padding="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelOrigen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flecha" />
+
+    <TextView
+        android:id="@+id/flecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="➜"
+        android:textSize="20sp"
+        android:textColor="@color/textPrimary"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/spinnerOrigen"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerOrigen"
+        app:layout_constraintStart_toEndOf="@+id/spinnerOrigen"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerDestino" />
+
+    <Spinner
+        android:id="@+id/spinnerDestino"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:theme="@style/SpinnerLightTheme"
+        android:padding="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/labelDestino"
+        app:layout_constraintStart_toEndOf="@+id/flecha"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnConvertir"
+        style="@style/BotonPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convertir"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOrigen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        style="@style/CardResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvertir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/iconoResultado"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_conversor"
+                app:tint="@color/white"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/resultadoValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/resultadoDetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese un valor para convertir"
+                android:textColor="@color/white"
+                android:alpha="0.85"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

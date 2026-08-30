@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculadoraActivity"
+    android:padding="25dp"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/Titulo"
+        style="@style/TituloPantalla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculadora"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPantalla"
+        style="@style/CardResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/pantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:gravity="end"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:maxLines="2"
+            android:ellipsize="start" />
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/numero1"
+        style="@style/InputEstandar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Primer número"
+        android:inputType="numberDecimal|numberSigned"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardPantalla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/numero2"
+        style="@style/InputEstandar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Segundo número"
+        android:inputType="numberDecimal|numberSigned"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/numero1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/contenedorBotones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/numero2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnSumar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="+"
+            android:textSize="20sp"
+            android:background="@drawable/bg_boton"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnRestar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="−"
+            android:textSize="20sp"
+            android:background="@drawable/bg_boton"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnMultiplicar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="×"
+            android:textSize="20sp"
+            android:background="@drawable/bg_boton"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnDividir"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="÷"
+            android:textSize="20sp"
+            android:background="@drawable/bg_boton"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
